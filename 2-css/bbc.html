@@ -12,6 +12,23 @@
                 font-family: Helmet, Freesans, Helvetica, Arial, sans-serif;
             }
             
+            h1 {
+                float: left;
+                margin: 0;
+                padding: 12px;
+                color: white;
+                font-size: 40px;
+                font-weight: normal;
+            }
+            
+            .clear-float {
+                clear: both;
+            }
+            
+            .no-border {
+                border: none !important;
+            }
+            
             .topbar-section {
                 float: left;
                 border-left: 2px #CCCCCC solid;
@@ -35,6 +52,7 @@
             
             #bell-div {
                 float: left;
+                height: 100%;
             }
             
             #down-arrow {
@@ -44,9 +62,42 @@
                 padding: 0;
             }
             
+            #down-arrow-2 {
+                height: 25%;
+                position: relative;
+                left: -10px;
+                padding: 0;
+            }
+            
             #grey-bell {
                 height: 60%;
                 margin: 10px 10px 10px 5px;
+            }
+            
+            #localnews {
+                float: right;
+                margin: 12px;
+                height: 60%;
+                border: 1px #BB4545 solid;
+            }
+            
+            #localnews a {
+                color: white;
+                text-decoration: none;
+                font-size: 20px;
+                position: relative;
+                padding-left: 10px;
+                top: -12px;
+                left: 5px;
+            }
+            
+            #localnews a:hover {
+                text-decoration: underline;
+            }
+            
+            #localnews img {
+                height: 40%;
+                padding: 12px 15px;
             }
             
             #magnifying-glass {
@@ -55,6 +106,45 @@
                 margin: 10px 0;
                 height: 32%;
                 border: 5px #D9D9D9 solid;
+            }
+            
+            #menubar {
+                width: 100%;
+                margin: 0 auto;
+            }
+            
+            #menubar-container {
+                background-color: #BB1919;
+                border-top: 1px #CCCCCC solid;
+                width: 100%;
+                min-width: 1080px;
+                height: 70px;
+            }
+            
+            #menubar2 {
+                width: 1080px;
+                height: 80%;
+                margin: 0 auto;
+                padding: 10px;
+            }
+            
+            #menubar2 a {
+                color: white;
+                text-decoration: none;
+                padding-left: 5px;
+                padding-right: 10px;
+                border-right: 1px solid #BB4545;
+            }
+            
+            #menubar2 a:hover {
+                text-decoration: underline;
+            }
+            
+            #menubar2-container {
+                background-color: #A91717;
+                width: 100%;
+                min-width: 1080px;
+                height: 40px;
             }
             
             #more-text {
@@ -176,6 +266,60 @@
             
             </div>
         
+        </div>
+        
+        <div class="clear-float"></div>
+        
+        <div id="menubar-container">
+            
+            <div id="menubar">
+                
+                <h1>NEWS</h1>
+                
+                <div id="localnews">
+                    
+                    <a href="">Find local news</a>
+                    
+                    <img src="images/location-marker.png">
+                
+                </div>
+            
+            </div>
+        
+        </div>
+        
+        <div id="menubar2-container">
+            
+            <div id="menubar2">
+                
+                <a href="">Home</a>
+                
+                <a href="">UK</a>
+                
+                <a href="">World</a>
+                
+                <a href="">Business</a>
+                
+                <a href="">Politics</a>
+                
+                <a href="">Tech</a>
+                
+                <a href="">Science</a>
+                
+                <a href="">Health</a>
+                
+                <a href="">Education</a>
+                
+                <a href="">Entertainment &amp; Arts</a>
+                
+                <a href="">Video &amp; Audio</a>
+                
+                <a class="no-border" href="">More</a>
+                
+                <img id="down-arrow-2" src="images/down-arrow-2.png">
+            
+            </div>
+            
         </div>
     
     </body>
