@@ -23,7 +23,6 @@
             
             h2 {
                 font-weight: normal;
-                
                 width: 100px;
                 font-size: 20px;
                 border-bottom: 2px #A91717 solid;
@@ -39,6 +38,13 @@
                 color: #1167A8;
             }
             
+            h4 {
+                font-weight: normal;
+                font-size: 30px;
+                color: black;
+                margin: 50px 0 25px 0;
+            }
+            
             .article-link {
                 color: black;
             }
@@ -47,8 +53,23 @@
                 clear: both;
             }
             
+            .clock {
+                height: 12px;
+            }
+            
             .no-border {
                 border: none !important;
+            }
+            
+            .side-article {
+                float: right;
+                width: 180px;
+            }
+            
+            .thumbnail {
+                float: left;
+                width: 110px;
+                margin-right: 10px;
             }
             
             .topbar-section {
@@ -70,6 +91,18 @@
                 color: #A91717;
                 padding: 0 5px;
                 border-left: 1px #CCCCCC solid;
+            }
+            
+            .watch-listen-link {
+                color: black;
+                font-weight: bold;
+                font-size: 18px;
+                margin: 0;
+            }
+            
+            .watch-listen-pane {
+                float: right;
+                padding-bottom: 5px;
             }
             
             #article-container {
@@ -101,10 +134,6 @@
             
             #article-summary a:hover {
                 color: #1167A8;
-            }
-            
-            #article-summary img {
-                height: 12px;
             }
             
             #bbc-logo {
@@ -171,10 +200,10 @@
             }
             
             #main-article {
+                float: left;
                 width: 1000px;
                 margin: 0 auto;
                 padding: 0 15px;
-                float: left;
             }
             
             #menubar {
@@ -264,8 +293,23 @@
             }
             
             #watch-listen {
+                float: right;
                 font-weight: normal;
-                font-size: 20px;
+                color: #5A5A5A;
+                width: 300px;
+                position: relative;
+                top: -70px;
+                left: -20px;
+            }
+            
+            #watch-listen a {
+                font-size: 15px;
+                text-decoration: none;
+                margin-bottom: -10px;
+            }
+            
+            #watch-listen a:hover {
+                color: #1167A8;
             }
         
         </style>
@@ -418,7 +462,7 @@
 
                         Security vulnerabilities that put customers at risk have affected Asda's website for a couple of years, a security expert has revealed.
 
-                        <p><img id="clock" src="images/clock.png"> 19 January 2016 <a class="topic-link" href="">Technology</a></p>
+                        <p><img class="clock" src="images/clock.png"> 2 hours ago <a class="topic-link" href="">Technology</a></p>
                         
                         <hr id="article-hr" align="left">
                         
@@ -431,17 +475,57 @@
                     <img id="asda" src="images/asda.jpg">
                 
                 </div>
+                
+                <div id="watch-listen">
+
+                    <h4>Watch/Listen</h4>
+                    
+                    <div class="watch-listen-pane">
+
+                        <img class="thumbnail" src="images/view1.png">
+
+                        <div class="side-article">
+
+                            <a class="watch-listen-link" href="">UK science chief backs blockchains</a>
+
+                            <p><img class="clock" src="images/clock.png"> 1 hour ago</p>
+
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="watch-listen-pane">
+
+                        <img class="thumbnail" src="images/view2.png">
+
+                        <div class="side-article">
+
+                            <a class="watch-listen-link" href="">Drone register gives 'accountabiity'</a>
+
+                            <p><img class="clock" src="images/clock.png"> 1 hour ago <a class="topic-link" href="">Technology</a></p>
+
+                        </div>
+                    
+                    </div>
+                    
+                    <div class="watch-listen-pane">
+
+                        <img class="thumbnail" src="images/view3.png">
+
+                        <div class="side-article">
+
+                            <a class="watch-listen-link" href="">SpaceX rocket explodes during landing</a>
+
+                            <p><img class="clock" src="images/clock.png"> 1 hour ago <a class="topic-link" href="">Science &amp; Environent</a></p>
+
+                        </div>
+                        
+                    </div>
+
+                </div>
             
             </div>
             
-        </div>
-        
-        <div class="clear-float"></div>
-        
-        <div id="watch-listen">
-            
-            <h4>Watch/Listen</h4>
-        
         </div>
     
     </body>
