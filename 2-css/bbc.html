@@ -21,6 +21,28 @@
                 font-weight: normal;
             }
             
+            h2 {
+                font-weight: normal;
+                
+                width: 100px;
+                font-size: 20px;
+                border-bottom: 2px #A91717 solid;
+            }
+            
+            h3 a {
+                color: black;
+                font-size: 32px;
+                text-decoration: none;
+            }
+            
+            h3 a:hover {
+                color: #1167A8;
+            }
+            
+            .article-link {
+                color: black;
+            }
+            
             .clear-float {
                 clear: both;
             }
@@ -42,6 +64,47 @@
                 position: relative;
                 top: 17px;
                 padding: 0 15px;
+            }
+            
+            .topic-link {
+                color: #A91717;
+                padding: 0 5px;
+                border-left: 1px #CCCCCC solid;
+            }
+            
+            #article-container {
+                float: left;
+                margin-top: -15px;
+                border-right: 1px #CCCCCC solid;
+            }
+            
+            #article-hr {
+                border-top: 1px #A91717 solid;
+                width: 40px;
+            }
+            
+            #article-summary {
+                float: left;
+                color: #5A5A5A;
+                font-size: 14px;
+                width: 230px;
+            }
+            
+            #article-summary a {
+                text-decoration: none;
+            }
+            
+            #asda {
+                height: 240px;
+                margin: 0 20px;
+            }
+            
+            #article-summary a:hover {
+                color: #1167A8;
+            }
+            
+            #article-summary img {
+                height: 12px;
             }
             
             #bbc-logo {
@@ -107,8 +170,15 @@
                 border: 5px #D9D9D9 solid;
             }
             
+            #main-article {
+                width: 1000px;
+                margin: 0 auto;
+                padding: 0 15px;
+                float: left;
+            }
+            
             #menubar {
-                width: 100%;
+                width: 1000px;
                 margin: 0 auto;
             }
             
@@ -116,7 +186,7 @@
                 background-color: #BB1919;
                 border-top: 1px #CCCCCC solid;
                 width: 100%;
-                min-width: 1080px;
+                min-width: 1000px;
                 height: 70px;
             }
             
@@ -142,12 +212,17 @@
             #menubar2-container {
                 background-color: #A91717;
                 width: 100%;
-                min-width: 1080px;
+                min-width: 1000px;
                 height: 40px;
             }
             
             #more-text {
                 padding-right: 5px;
+            }
+            
+            #page-container {
+                width: 1000px;
+                margin: 0 auto;
             }
             
             #right-notched-line {
@@ -166,14 +241,15 @@
             }
             
             #signin-text {
-                left: -10px;
-                padding-right: 10px;
+                left: -20px;
+                margin-right: -25;
             }
             
             #search {
                 float: left;
                 background-color: #D9D9D9;
                 border: none;
+                width: 140px;
                 margin: 10px 0 10px 10px;
                 padding: 5px;
                 font-weight: bold;
@@ -182,9 +258,14 @@
             
             #topbar {
                 background-color: white;
-                width: 1080px;
+                width: 1000px;
                 height: 50px;
                 margin: 0 auto;
+            }
+            
+            #watch-listen {
+                font-weight: normal;
+                font-size: 20px;
             }
         
         </style>
@@ -319,6 +400,48 @@
             
             </div>
             
+        </div>
+        
+        <div class="clear-float"></div>
+        
+        <div id="page-container">
+        
+            <div id="main-article">
+                
+                <h2>Technology</h2>
+                
+                <div id="article-container">
+                
+                    <h3><a href="">Asda bug exposed payment details</a></h3>
+
+                    <div id="article-summary">
+
+                        Security vulnerabilities that put customers at risk have affected Asda's website for a couple of years, a security expert has revealed.
+
+                        <p><img id="clock" src="images/clock.png"> 19 January 2016 <a class="topic-link" href="">Technology</a></p>
+                        
+                        <hr id="article-hr" align="left">
+                        
+                        <p><a class="article-link" href="">Surveillance firm hit in hack attack</a></p>
+                        
+                        <p><a class="article-link" href="">eBay flaw has existed for months</a></p>
+
+                    </div>
+                    
+                    <img id="asda" src="images/asda.jpg">
+                
+                </div>
+            
+            </div>
+            
+        </div>
+        
+        <div class="clear-float"></div>
+        
+        <div id="watch-listen">
+            
+            <h4>Watch/Listen</h4>
+        
         </div>
     
     </body>
