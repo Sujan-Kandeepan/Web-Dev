@@ -1,0 +1,46 @@
+<html>
+
+    <head>
+    
+        <title>JavaScript</title>
+    
+    </head>
+    
+    <body>
+    
+        <button onClick="alert('This dialog was created using inline JavaScript!');">Using Inline JS</button>
+        
+        <button onClick="clicked();">Using Internal JS</button>
+        
+        <script type="text/javascript">
+            
+            function clicked() {
+            
+                alert('This dialog was created using internal Javascript!');
+                
+            }
+        
+        </script>
+        
+        <p id="text">Original text...</p>
+        
+        <button id="changeText">Click to change the above text</button>
+        
+        <script type="text/javascript">
+            
+            // This is a single-line JavaScript comment.
+            
+            /* This is a multi-line
+                JavaScript comment. */
+            
+            document.getElementById("changeText").onclick = function() {
+            
+                document.getElementById("text").innerHTML = "Text changed!";
+                
+            }
+        
+        </script>
+    
+    </body>
+
+</html>
