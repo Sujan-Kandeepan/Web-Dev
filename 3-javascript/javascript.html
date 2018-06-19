@@ -3,10 +3,38 @@
     <head>
     
         <title>JavaScript</title>
+        
+        <style type="text/css">
+        
+            .circle {
+                width: 100px;
+                height: 100px;
+                border-radius: 50px;
+                float: left;
+                margin: 20px;
+            }
+            
+            #circle1 {
+                background-color: red;
+            }
+            
+            #circle2 {
+                background-color: blue;
+            }
+            
+            #circle3 {
+                background-color: yellow;
+            }
+        
+        </style>
     
     </head>
     
     <body>
+        
+        Working with JavaScript!
+        
+        <hr> <!--Inline vs internal JS-->
     
         <button onClick="alert('This dialog was created using inline JavaScript!');">Using Inline JS</button>
         
@@ -22,6 +50,8 @@
         
         </script>
         
+        <hr> <!--Replacing HTML elements-->
+        
         <p id="text">Original text...</p>
         
         <button id="changeText">Click to change the above text</button>
@@ -34,9 +64,309 @@
                 JavaScript comment. */
             
             document.getElementById("changeText").onclick = function() {
-            
                 document.getElementById("text").innerHTML = "Text changed!";
+            }
+        
+        </script>
+        
+        <hr> <!--Addng to existing HTML elements-->
+        
+        <p id="text2">JavaScript is ...</p>
+        
+        <button id="addText">Click to finish the above sentence</button>
+        
+        <script type="text/javascript">
+            
+            document.getElementById("addText").onclick = function() {
+                document.getElementById("text2").innerHTML = document.getElementById("text2").innerHTML.replace("...", "cool!");
+            }
+        
+        </script>
+        
+        <hr> <!--Creating new HTML elements-->
+        
+        <p id="appearing"></p>
+        
+        <button id="displayText">Click to make some text appear above</button>
+        
+        <script type="text/javascript">
+            
+            document.getElementById("displayText").onclick = function() {
+                document.getElementById("appearing").innerHTML = "<h1>Text appearing out of thin air!</h1>";
+            }
+        
+        </script>
+        
+        <hr> <!--Maipulating styles-->
+        
+        <p id="styleChanging">Here is some text that needs some style.</p>
+        
+        <button id="changeStyle">Click to change the style of the above text</button>
+        
+        <script type="text/javascript">
+            
+            document.getElementById("changeStyle").onclick = function() {
+                document.getElementById("styleChanging").style.color = "red";
+                document.getElementById("styleChanging").style.fontSize = "30px";
+            }
+        
+        </script>
+        
+        <hr> <!--Disappearing text-->
+        
+        <p id="disappearing">Here is some disappearing text.</p>
+        
+        <button id="hideText">Click to change the style of the above text</button>
+        
+        <script type="text/javascript">
+            
+            document.getElementById("hideText").onclick = function() {
+                document.getElementById("disappearing").style.display = "none";
+            }
+        
+        </script>
+        
+        <hr> <!--Disappearing circles (challenge)-->
+        
+        <div class="circle" id="circle1"></div>
+        
+        <div class="circle" id="circle2"></div>
+        
+        <div class="circle" id="circle3"></div>
+        
+        <script type="text/javascript">
+        
+            document.getElementById("circle1").onclick = function() {
+                document.getElementById("circle1").style.display = "none";
+            }
+            
+            document.getElementById("circle2").onclick = function() {
+                document.getElementById("circle2").style.display = "none";
+            }
+            
+            document.getElementById("circle3").onclick = function() {
+                document.getElementById("circle3").style.display = "none";
+            }
+        
+        </script>
+        
+        <div style="clear: left"></div>
+        
+        <hr> <!--Displaying variables-->
+        
+        <button id="showVariable">Click to alert the value of x</button>
+        
+        <script type="text/javascript">
+        
+            var x = 5;
+            x = 10;
+            
+            document.getElementById("showVariable").onclick = function() {
+                alert (x);
+            }
+        
+        </script>
+        
+        <hr> <!--Using variables in page-->
+        
+        <input id="textInput" type="text">
+        
+        <button id="insertText">Change the text</button>
+        
+        <p id="inputText">This is some text</p>
+        
+        <script type="text/javascript">
+            
+            document.getElementById("insertText").onclick = function() {
+                var textEntered = "";
+                textEntered = document.getElementById("textInput").value;
+                document.getElementById("inputText").innerHTML = textEntered;
+            }
+        
+        </script>
+        
+        <hr> <!--Arrays-->
+        
+        <p>*Check console for array output*</p>
+        
+        <script type="text/javascript">
+        
+            var myArray = new Array();
+            myArray[0] = "pizza";
+            myArray[1] = "chocolate";
+            console.log(myArray);
+            
+            var tweets = ["Morning everybody!", "I love coffee"];
+            tweets.push("Back to work!");
+            tweets.splice(1, 2); // Remove, index 1, 2 consecutive elements
+            tweets.splice(0, 1, "Cornflakes for breakfast!", "Num num") // Add at index 0 and replace 1 consecutive element, two tweets inserted
+            console.log(tweets);
+        
+        </script>
+        
+        <hr> <!--If statements-->
+        
+        <form>
+            
+            <p>Enter the magic word</p>
+            
+            <input type="text" id="wordInput">
+            
+            <input type="submit" value="Check" id="wordSubmit">
+        
+        </form>
+        
+        <script type="text/javascript">
+            
+            document.getElementById("wordSubmit").onclick = function() {
+        
+                var magicWord = "abracadabra";
+                if (document.getElementById("wordInput").value == magicWord) {
+                    alert("You've guessed the magic word!")
+                } else {
+                    alert("Nope, try again!");
+                }
                 
+            }
+            
+        </script>
+        
+        <hr> <!--How many fingers? (challenge)-->
+        
+        <form>
+        
+            <p>How many fingers am I holding up?</p>
+            
+            <input type="text" id="guessFingers">
+            
+            <input type="submit" value = "Guess!" id="checkGuess">
+        
+        </form>
+        
+        <script type="text/javascript">
+            
+            document.getElementById("checkGuess").onclick = function() {
+                var randomNumber = Math.floor(Math.random() * 6);
+                if (document.getElementById("guessFingers").value == randomNumber) {
+                    alert("You guessed correctly!");
+                } else {
+                    alert("Nope, the number was " + randomNumber + "!");
+                }
+            }
+        
+        </script>
+        
+        <hr> <!--For loops-->
+        
+        <p>*Check console for output of for loops*</p>
+        
+        <div = id="tweetDisplay">Tweets should display here</div>
+        
+        <script type=text/javascript>
+        
+            for (var i = 0; i < 5; i++) {
+                console.log(i);
+            }
+            
+            for (var i = 5; i > 0; i--) {
+                console.log(i);
+            }
+            
+            var tweets = ["Hi everyone!", "I love cornflakes!", "Night night :)"];
+            document.getElementById("tweetDisplay").innerHTML = "";
+            for (var i = 0; i < tweets.length; i++) {
+                document.getElementById("tweetDisplay").innerHTML += "<p>" + tweets[i] + "</p>";
+            }
+        
+        </script>
+        
+        <hr> <!--While loops-->
+        
+        <form>
+        
+            <p>How many fingers are you holding up?</p>
+            
+            <select id="myNumber">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            
+            <input type="submit" id="guess">
+        
+        </form>
+        
+        <script type=text/javascript>
+        
+            document.getElementById("guess").onclick = function() {
+                var userNumber = document.getElementById("myNumber").value;
+                var correct = false;
+                var numGuesses = 1;
+                while (!correct) {
+                    var tryNumber = Math.floor(Math.random() * 6);
+                    if (userNumber == tryNumber) {
+                        alert("I guessed your number! It was " + userNumber + " and I got it right on attempt #" + numGuesses);
+                        correct = true;
+                    } else {
+                        numGuesses++;
+                    }
+                }
+            }
+        
+        </script>
+        
+        <hr> <!--Functions-->
+        
+        <button onclick="alertMe()">Alert</button>
+        
+        <button onclick="alert(average(3, 5))">Average of 3 and 5</button>
+        
+        <form>
+        
+            <p>How many fingers are you holding up?</p>
+            
+            <select id="myNumber2">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            
+            <input type="submit" id="guess2">
+        
+        </form>
+        
+        <script type="text/javascript">
+        
+            function alertMe() {
+                alert("This is an alert!");
+            }
+            
+            function average(a, b) {
+                return (a + b) / 2;
+            }
+            
+            function guess(correctAnswer) {
+                return Math.floor(Math.random() * 6) == correctAnswer;
+            }
+            
+            document.getElementById("guess2").onclick = function() {
+                var userNumber = document.getElementById("myNumber2").value;
+                var correct = false;
+                var numGuesses = 1;
+                while (!correct) {
+                    if (guess(userNumber)) {
+                        alert("I guessed your number! It was " + userNumber + " and I got it right on attempt #" + numGuesses);
+                        correct = true;
+                    } else {
+                        numGuesses++;
+                    }
+                }
             }
         
         </script>
