@@ -203,14 +203,16 @@
         
         <hr> <!--Regular expressions-->
         
-        <p id="regex"></p>
+        <button id="regex">Show regex match</button>
         
         <script type="text/javascript">
-        
-            var regex = /E/ig;
-            var string = "Regex is great";
-            var result = string.match(regex);
-            alert(result);
+            
+            $("#regex").click(function() {
+                var regex = /E/ig;
+                var string = "Regex is great";
+                var result = string.match(regex);
+                alert(result);
+            });
         
         </script>
     
