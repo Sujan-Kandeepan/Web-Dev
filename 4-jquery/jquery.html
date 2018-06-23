@@ -1,0 +1,219 @@
+<html>
+
+    <head>
+    
+        <title>jQuery</title>
+        
+        <script type="text/javascript" src="jquery.min.js"></script>
+        
+        <style type="text/css">
+        
+            #circle {
+                background-color: green;
+                border-radius: 50%;
+            }
+            
+            .square {
+                background-color: red;
+            }
+            
+            .shape {
+                width: 100px;
+                height: 100px;
+                margin: 10px;
+                float: left;
+            }
+        
+        </style>
+    
+    </head>
+    
+    <body>
+        
+        <p>Working with jQuery!</p>
+        
+        <hr> <!--Verifying correct installation-->
+        
+        <p>Check console to see if jQuery works.</p>
+    
+        <script type="text/javascript">
+        
+            if (typeof jQuery == "undefined") {
+                console.log("jQuery is not installed");
+            }
+            else {
+                console.log("jQuery is installed correctly");
+            }
+        
+        </script>
+        
+        <hr> <!--Detecting a click-->
+        
+        <div class="shape" id="circle"></div>
+        <div class="shape square"></div>
+        <div class="shape square"></div>
+        <div style="clear: both"></div>
+        
+        <script type="text/javascript">
+        
+            $("#circle").click(function() {
+                alert("The circle was clicked!");
+            });
+            
+            
+            $(".square").click(function() {
+                alert("A square was clicked!");
+            })
+            
+            $("div").click(function() {
+                alert("Some div was clicked!");
+            })
+        
+        </script>
+        
+        <hr> <!--Changing website content-->
+        
+        <p id="trigger">Interact with this text to change the text below.</p>
+        
+        <p id="changing-text">This text is about to change.</p>
+        
+        <!--<iframe width="500px" height="300px" src="https://en.wikipedia.org/wiki/Donald_Trump"></iframe>-->
+        
+        <script type="text/javascript">
+        
+            $("#trigger").click(function() {
+                $("#changing-text").html("The above text was clicked!");
+            });
+            
+            $("#trigger").hover(function(){
+                $("#changing-text").html("The above text was hovered over.");
+            });
+            
+            $("iframe").hover(function() {
+                $("iframe").attr("src", "http://loser.com/");
+            })
+        
+        </script>
+        
+        <hr> <!--Changing website styles-->
+        
+        <div class="shape square" id="changing-shape">Changing</div>
+        <div class="shape square disappearing" id="disappearing1">Disappearing</div>
+        <div class="shape square disappearing" id="disappearing2">Disappearing</div>
+        <div style="clear: both"></div>
+        
+        <script type="text/javascript">
+        
+            $("#changing-shape").click(function() {
+                $("#changing-shape").css("border-radius", "50%");
+                $("#changing-shape").css("background-color", "blue");
+                alert("This circle has a diameter of " + $("#changing-shape").css("width"));
+                alert("The page is " + $("body").css("width") + " wide");
+            });
+            
+            $(".disappearing").click(function() {
+                $(this).css("display", "none");
+                alert("You clicked on the " + ($(this).attr("id") == "disappearing1" ? "first" : "second") + " disappearing square");
+            });
+        
+        </script>
+        
+        <hr> <!--Fading content-->
+        
+        <div class="shape square disappearing" id="fading">Fading</div>
+        <p id="fadeout-text">This text is about to fade out.</p>
+        <p id="fadein-text" style="display: none">This text is just faded in.</p>
+        <p id="toggle-text">This text shall come and go as it pleases.</p>
+        <button id="replace-button">Replace text</button>
+        <button id="toggle-button">Toggle text</button>
+        <div style="clear: both"></div>
+        
+        <script type="text/javascript">
+        
+            $("#fading").click(function() {
+                $(this).fadeOut("slow", function() {
+                    alert("The shape has faded out!");
+                });
+            });
+            
+            $("#replace-button").click(function() {
+                $("#fadeout-text").fadeOut(function() {
+                    $("#fadeout-button").html("Text replaced");
+                });
+                $("#fadein-text").fadeIn();
+            });
+            
+            $("#toggle-button").click(function() {
+                if ($("#toggle-text").css("display") != "none") {
+                    $("#toggle-text").fadeOut();
+                } else {
+                    $("#toggle-text").fadeIn();
+                }
+            });
+        
+        </script>
+        
+        <hr> <!--Animating content-->
+        
+        <div class="shape square" id="animated">Animated</div>
+        <div style="clear: both"></div>
+        
+        <script type="text/javascript">
+        
+            $("#animated").click(function() {
+                $(this).animate({
+                    width: "400px",
+                    height: "400px",
+                    backgroundColor: "black",
+                    borderRadius: "50%",
+                    marginTop: "100px",
+                    marginLeft: "100px"
+                }, 2000, function() {
+                    $(this).css("background-color", "green");
+                });
+            });
+        
+        </script>
+        
+        <hr> <!--AJAX-->
+        
+        <button id="get-request">Get request</button>
+        <button id="ajax-request">Ajax request</button>
+        <p id="content"></p>
+        
+        <script type="text/javascript">
+        
+            $("#get-request").click(function() {
+                $.get("info.txt", function(data) {
+                    alert("Get request successful!");
+                    $("#content").html(data);
+                });
+            });
+            
+            $("#ajax-request").click(function() {
+                $.ajax("info.txt").done(function(data) {
+                    alert("AJAX request successful!");
+                    $("#content").html(data);
+                }).fail(function() {
+                    alert("Could not get content!");
+                });
+            });
+        
+        </script>
+        
+        <hr> <!--Regular expressions-->
+        
+        <p id="regex"></p>
+        
+        <script type="text/javascript">
+        
+            var regex = /E/ig;
+            var string = "Regex is great";
+            var result = string.match(regex);
+            alert(result);
+        
+        </script>
+    
+    </body>
+
+</html>
