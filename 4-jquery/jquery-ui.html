@@ -1,0 +1,166 @@
+<html>
+    
+    <head>
+    
+        <title>jQuery UI</title>
+        
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script src="jquery-ui/jquery-ui.js"></script>
+        
+        <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+        
+        <style type="text/css">
+            
+            #anotherdiv {
+                width: 200px;
+                height: 100px;
+                border: 1px solid black;
+            }
+            
+            #bigdiv {
+                float: left;
+                width: 200px;
+                height: 200px;
+                background-color: lightblue;
+                border: 1px solid black;
+            }
+            
+            #constrain-drag {
+                width: 200px;
+                height: 100px;
+                border: 1px solid black;
+            }
+            
+            #draggablediv {
+                width: 70px;
+                height: auto;
+                background-color: white;
+            }
+            
+            #littlediv {
+                float: left;
+                width: 50px;
+                height: 50px;
+                margin: 20px;
+                background-color: red;
+                border: 1px solid black;
+            }
+            
+            #resizablediv {
+                width: 200px;
+                height: 100px;
+                border: 1px solid black;
+            }
+        
+        </style>
+    
+    </head>
+
+    <body>
+    
+        Working with jQuery UI!
+        
+        <hr> <!--Draggable-->
+        
+        <p id="draggable">Draggable anywhere</p>
+        <p id="draggablex">Draggable horizontally</p>
+        <p id="draggabley">Draggable vertically</p>
+        <div id="constrain-drag">
+            <div id="draggablediv">Draggable within div</div>
+        </div>
+        
+        <script type="text/javascript">
+            
+            $("#draggable").draggable();
+            $("#draggablex").draggable({ axis: "x" });
+            $("#draggabley").draggable({ axis: "y" });
+            $("#draggablediv").draggable({containment: "#constrain-drag", scroll: false});
+        
+        </script>
+        
+        <hr> <!--Resizable-->
+        
+        <div id="resizablediv">Resizable div</div>
+        <div id="anotherdiv">Another div</div>
+        
+        <script type="text/javascript">
+            
+            $("#resizablediv").resizable({ grid: 50, alsoResize: "#anotherdiv",
+                resize: function(event, ui) {
+                    if ($("#resizablediv").width() >= 500) {
+                        alert("The div is really wide!");
+                    }
+                }
+            });
+        
+        </script>
+        
+        <hr> <!--Droppable-->
+        
+        <div id="littlediv"></div>
+        <div id="bigdiv"></div>
+        <div style="clear: both"></div>
+        
+        <script type="text/javascript">
+            
+            $("#littlediv").draggable();
+            $("#bigdiv").droppable({
+                drop: function(event, ui) {
+                    alert("Div dropped!");
+                    console.log(ui);
+                    console.log(event);
+                }
+            });
+        
+        </script>
+        
+        <hr> <!--Accordion-->
+        
+        <div id="accordion">
+            <h3>Header 1</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae nunc sed velit dignissim. Nulla pharetra diam sit amet nisl. Fringilla urna porttitor rhoncus dolor purus non enim praesent. Non diam phasellus vestibulum lorem sed risus ultricies. Augue neque gravida in fermentum et sollicitudin. Mattis nunc sed blandit libero volutpat. Sit amet consectetur adipiscing elit. Et sollicitudin ac orci phasellus egestas tellus rutrum tellus. Vestibulum morbi blandit cursus risus at. Enim ut tellus elementum sagittis vitae et leo duis. Mi sit amet mauris commodo. Auctor elit sed vulputate mi sit amet mauris. Consectetur purus ut faucibus pulvinar. Feugiat vivamus at augue eget arcu. Diam sollicitudin tempor id eu nisl nunc mi ipsum faucibus. Mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Vivamus arcu felis bibendum ut. Amet risus nullam eget felis eget nunc lobortis. Sollicitudin aliquam ultrices sagittis orci a.
+            </p>
+            <h3>Header 2</h3>
+            <p>
+                Morbi blandit cursus risus at ultrices mi tempus. Nibh cras pulvinar mattis nunc sed blandit libero volutpat. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Mauris in aliquam sem fringilla ut morbi tincidunt. Sit amet est placerat in egestas erat imperdiet sed euismod. Risus feugiat in ante metus dictum at tempor. Scelerisque purus semper eget duis at. Auctor elit sed vulputate mi sit amet. Ut enim blandit volutpat maecenas volutpat. Nunc non blandit massa enim nec dui nunc mattis enim. In egestas erat imperdiet sed euismod nisi porta lorem. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Sed libero enim sed faucibus turpis. Non sodales neque sodales ut etiam sit amet nisl purus. Ultricies integer quis auctor elit. Eu augue ut lectus arcu bibendum at varius.
+            </p>
+            <h3>Header 3</h3>
+            <p>
+                Pretium quam vulputate dignissim suspendisse in est ante. Ultricies lacus sed turpis tincidunt id aliquet risus. Pretium fusce id velit ut tortor pretium viverra suspendisse. Velit scelerisque in dictum non consectetur a erat nam at. Tristique senectus et netus et malesuada. Integer feugiat scelerisque varius morbi enim nunc faucibus. Mauris pellentesque pulvinar pellentesque habitant morbi. Semper auctor neque vitae tempus quam. Venenatis a condimentum vitae sapien pellentesque habitant. Vitae elementum curabitur vitae nunc sed velit dignissim sodales. Diam maecenas ultricies mi eget mauris. Risus in hendrerit gravida rutrum. A pellentesque sit amet porttitor. Amet risus nullam eget felis eget. Leo urna molestie at elementum eu facilisis sed. Habitasse platea dictumst vestibulum rhoncus est pellentesque. Vitae congue mauris rhoncus aenean.
+            </p>
+            <h3>Header 4</h3>
+            <p>
+                Turpis egestas sed tempus urna et pharetra pharetra massa massa. Ultricies lacus sed turpis tincidunt id aliquet risus feugiat. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. Morbi non arcu risus quis varius quam quisque id. Ornare quam viverra orci sagittis eu volutpat. Dui accumsan sit amet nulla facilisi morbi tempus. Nibh praesent tristique magna sit amet purus. Nisl pretium fusce id velit ut. Rhoncus dolor purus non enim praesent elementum facilisis leo vel. Sed viverra ipsum nunc aliquet. Nulla aliquet enim tortor at auctor urna nunc id cursus.
+            </p>
+            <h3>Header 5</h3>
+            <p>
+                Scelerisque felis imperdiet proin fermentum leo vel orci porta non. Felis eget velit aliquet sagittis id consectetur purus ut faucibus. Ornare aenean euismod elementum nisi quis. In est ante in nibh mauris cursus. Sit amet nulla facilisi morbi tempus. Tellus cras adipiscing enim eu turpis egestas pretium aenean. Lorem ipsum dolor sit amet consectetur. Purus non enim praesent elementum facilisis leo. Placerat duis ultricies lacus sed turpis tincidunt. Ut eu sem integer vitae justo eget. Tellus cras adipiscing enim eu turpis egestas pretium aenean. Duis tristique sollicitudin nibh sit. Dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo. Integer enim neque volutpat ac tincidunt vitae semper quis. Facilisis mauris sit amet massa vitae. Est ullamcorper eget nulla facilisi. Eu turpis egestas pretium aenean pharetra magna. Enim sit amet venenatis urna cursus eget. Facilisis magna etiam tempor orci eu lobortis elementum.
+            </p>
+        </div>
+        
+        <script type="text/javascript">
+            
+            $("#accordion").accordion();
+        
+        </script>
+        
+        <hr> <!--Sortable list-->
+        
+        <ul id="sortable">
+            <li>Sortable list item 1</li>
+            <li>Sortable list item 2</li>
+            <li>Sortable list item 3</li>
+            <li>Sortable list item 4</li>
+            <li>Sortable list item 5</li>
+        </ul>
+        
+        <script type="text/javascript">
+            
+            $("#sortable").sortable();
+        
+        </script>
+    
+    </body>
+
+</html>
