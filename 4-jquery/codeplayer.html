@@ -1,0 +1,158 @@
+<html>
+
+    <head>
+    
+        <title>Code Player</title>
+        
+        <script type="text/javascript" src="jquery.min.js"></script>
+        
+        <style type="text/css">
+            
+            body {
+                font-family: sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            
+            iframe {
+                border: none;
+            }
+            
+            textarea {
+                border-top: none;
+                border-left: none;
+                border-bottom: none;
+                border-color: grey;
+                resize: none;
+            }
+            
+            .active {
+                background-color: #D8EEFF;
+            }
+            
+            .clicked {
+                background-color: grey;
+            }
+            
+            .hidden {
+                display: none;
+            }
+            
+            .highlighted {
+                background-color: #CCCCCC;
+            }
+            
+            .panel {
+                float: left;
+                padding: 0;
+                width: 50%;
+            }
+            
+            .toggle-button {
+                border: 1px solid grey;
+                border-right: none;
+                float: left;
+                font-size: 90%;
+                padding: 6px;
+            }
+            
+            #button-container {
+                margin: 0 auto;
+                width: 233px;
+            }
+            
+            #header {
+                background-color: #EEEEEE;
+                height: 32px;
+                padding: 5px 0;
+                width: 100%;
+            }
+            
+            #html {
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+            }
+            
+            #logo {
+                float: left;
+                font-weight: bold;
+                font-size: 120%;
+                padding: 5px;
+            }
+            
+            #output {
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+                border-right: 1px solid grey;
+            }
+        
+        </style>
+    
+    </head>
+    
+    <body>
+        
+        <div id="header">
+            <div id="logo">Code Player</div>
+            <div id="button-container">
+                <div class="toggle-button active" id="html">HTML</div>
+                <div class="toggle-button" id="css">CSS</div>
+                <div class="toggle-button" id=javascript>JavaScript</div>
+                <div class="toggle-button active" id="output">Output</div>
+            </div>
+        </div>
+        
+        <div id="body-container">
+            <textarea class="panel" id="html-panel"><p id="paragraph">Hello world!</p></textarea>
+            <textarea class="panel hidden" id="css-panel">p { color: green; }</textarea>
+            <textarea class="panel hidden" id="javascript-panel">document.getElementById("paragraph").innerHTML = "Hi there!";</textarea>
+            <iframe class="panel" id="output-panel"></iframe>
+        </div>
+    
+        <script type="text/javascript">
+            
+            function updateOutput() {
+                $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#css-panel").val() + "</style></head><body>" + $("#html-panel").val() + "</body></html>");
+                document.getElementById("output-panel").contentWindow.eval($("#javascript-panel").val());
+            }
+        
+            $(".toggle-button").hover(function() {
+                $(this).addClass("highlighted");
+            }, function() {
+                $(this).removeClass("highlighted");
+            });
+            
+            $(".toggle-button").click(function() {
+                $(this).toggleClass("active");
+                $(this).removeClass("highlighted");
+                
+                var panel = $(this).attr("id") + "-panel";
+                $("#" + panel).toggleClass("hidden");
+                
+                var numActivePanels = 4 - $(".hidden").length;
+                $(".panel").width($(window).width() / numActivePanels - 10);
+            });
+            
+            $(".panel").height($(window).height() - $("#header").height() - 15);
+            
+            $(".panel").width($(window).width() / 2 - 10);
+            
+            updateOutput();
+            
+            $("#html-panel").on("change keyup paste", function() {
+                updateOutput();
+            });
+            
+            $("#css-panel").on("change keyup paste", function() {
+                updateOutput();
+            });
+            
+            $("#javascript-panel").on("change keyup paste", function() {
+                updateOutput();
+            });
+        
+        </script>
+    
+    </body>
+
+</html>
