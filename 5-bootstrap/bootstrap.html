@@ -11,11 +11,20 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
         <title>Hello, world!</title>
+        
     </head>
     
     <body>
         
         <h1>Hello, world!</h1>
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
         
         <hr> <!--Grid system-->
         
@@ -98,13 +107,313 @@
             </nav>
         </div>
 
-
-
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <hr> <!--Forms-->
+        
+        <div class="container">
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleSelect1">Example select</label>
+                    <select class="form-control" id="exampleSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleSelect2">Example multiple select</label>
+                    <select multiple class="form-control" id="exampleSelect2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea">Example textarea</label>
+                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">File input</label>
+                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                    <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+                </div>
+                <fieldset class="form-group">
+                    <legend>Radio buttons</legend>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                            Option one is this and that&mdash;be sure to include why it's great
+                        </label>
+                    </div>
+                    <div class="form-check">
+                    <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                            Option two can be something else and selecting it will deselect option one
+                        </label>
+                    </div>
+                    <div class="form-check disabled">
+                    <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+                            Option three is disabled
+                        </label>
+                    </div>
+                </fieldset>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Check me out
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        
+        <div class="container" style="margin-top: 20px">
+            <form>
+                <div class="form-group row">
+                    <label class="col-sm-2" for="email">Email address</label>
+                    <input type="email" id="email" class="col-sm-10 form-control">
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2" for="password">Password</label>
+                    <input type="password" id="password" class="col-sm-10 form-control">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+        
+        <hr> <!--Tables-->
+        
+        <div class="container">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <hr> <!--Jumbotron-->
+        
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="display-4">Hello, world!</h1>
+                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                <hr class="my-4">
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </div>
+        </div>
+        
+        <hr> <!--Alerts-->
+        
+        <div class="container">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Danger!</strong> Something has gone terribly wrong!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        
+        <hr> <!--Progress-->
+        
+        <div class="container">
+            <div class="progress bg-dark" style="margin: 5px">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 42%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+        
+        <hr> <!--Cards-->
+        
+        <div class="container row">
+            <div class="col-md-3">
+                <div class="card" style="margin: 5px; width: 100%">
+                    <img class="card-img-top" src="bg.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="margin: 5px; width: 100%">
+                    <img class="card-img-top" src="bg.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="margin: 5px; width: 100%">
+                    <img class="card-img-top" src="bg.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="margin: 5px; width: 100%">
+                    <img class="card-img-top" src="bg.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <hr> <!--Modals-->
+        <div class="container">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-name="Sujan">
+                Email Sujan
+            </button>
+            
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-name="Jaison">
+                Email Jaison
+            </button>
+            
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-name="Abhi">
+                Email Abhi
+            </button>
+        </div>
+        
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="messageContent">
+                        <textarea style="width: 100%; height: 200px"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+            var button, recipient, modal;
+            
+            $('#exampleModal').on('show.bs.modal', function (event) {
+                button = $(event.relatedTarget);
+                recipient = button.data('name');
+                modal = $(this);
+                modal.find('.modal-title').text('New message to ' + recipient);
+                modal.find('.modal-body input').val(recipient);
+            });
+            
+            $('#exampleModal').on('hide.bs.modal', function (event) {
+                console.log("Message sent to " + recipient + "!");
+            });
+        </script>
+        
+        <hr> <!--Popovers-->
+        
+        <script type="text/javascript">
+            $(function () {
+                $('[data-toggle="popover"]').popover()
+            });
+        </script>
+        
+        <div class="container">
+            <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="bottom" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+        </div>
+        
+        <hr> <!--Tooltip-->
+        
+        <div class="container">
+            <button type="button" class="btn btn-secondary" id="myTooltip" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+                Tooltip on bottom
+            </button>
+        </div>
+        
+        <script type="text/javascript">
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            });
+            
+            $('#myTooltip').on('shown.bs.tooltip', function () {
+                console.log("Tooltip showing");
+            });
+        </script>
+        
+        <hr> <!--Scrollspy-->
+        
+        <div class="container">
+            <nav class="nav" id="navbar-example">
+                <ul class="nav nav-tabs">
+                    <li><a class="nav-link" href="#sujan">Sujan</a></li>
+                    <li><a class="nav-link" href="#janan">Janan</a></li>
+                    <li><a class="nav-link" href="#sujatha">Sujatha</a></li>
+                    <li><a class="nav-link" href="#kandeepan">Kandeepan</a></li>
+                </ul>
+            </nav>
+            <div style="position: relative; height: 500px; overflow-y: scroll" data-spy="scroll" data-target="#navbar-example">
+                <p id="sujan">
+                    Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan Sujan
+                </p>
+                <p id="janan">
+                    Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan Janan
+                </p>
+                <p id="sujatha">
+                    Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha Sujatha
+                </p>
+                <p id="kandeepan">
+                    Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan Kandeepan
+                </p>
+            </div>
+        </div>
         
     </body>
     
