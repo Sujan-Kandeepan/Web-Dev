@@ -1,0 +1,193 @@
+<!doctype html>
+
+<html lang="en">
+    
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap and Font Awesome CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        
+        <!-- Dependencies -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+        <title>My Awesome App</title>
+        
+        <style type="text/css">
+        
+            body {
+                background-color: #222222;
+                color: lightgrey;
+                padding-top: 50px;
+                position: relative;
+            }
+            
+            hr {
+                background-color: #888888;
+            }
+            
+            .border-info {
+                border-color: #17A2B8;
+            }
+            
+            .card {
+                color: black;
+            }
+            
+            .download-link {
+                height: 50px;
+                margin: 20px 50px;
+            }
+            
+            .download-link-container {
+                width: 50%;
+                text-align: center;
+            }
+            
+            .jumbotron {
+                background-image: url(images/background.jpg);
+                background-size: cover;
+                color: white;
+            }
+            
+            #app-summary {
+                margin-bottom: 40px;
+            }
+            
+            #download {
+                padding: 100px 0;
+            }
+            
+            #email {
+                width: 300px;
+            }
+            
+            #navbar {
+                background: #111111;
+            }
+        
+        </style>
+        
+    </head>
+    
+    <body data-spy="scroll" data-target="#navbar" data-offset="400">
+        
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
+            
+            <a class="navbar-brand" href="#home">My App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#download">Download The App</a>
+                    </li>
+                </ul>
+                
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control border-info mr-sm-2 text-light bg-dark" type="email" placeholder="Email" aria-label="Search">
+                    <input class="form-control border-info mr-sm-2 text-light bg-dark" type="password" placeholder="Password" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log In</button>
+                </form>
+            </div>
+        </nav>
+        
+        <div class="jumbotron" id="home">
+            <h1 class="display-4">My Awesome App</h1>
+            <p class="lead">This app was designed to do great things, marvel at its splendour. Not only does it 100% exist, but it will blow you away in a matter of milliseconds. Save the questions, simply behold. You will not be disappointed.</p>
+            
+            <hr class="my-4">
+            
+            <p>A countless number of man-hours was put into its development, making it perfectly suited for users like you. Join our mailing list to stay updated.</p>
+            
+            <form class="form-inline">
+                <label class="sr-only" for="email">Email</label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text border-info text-info bg-transparent">@</div>
+                    </div>
+                    <input type="email" class="form-control border-info text-light bg-transparent" id="email" placeholder="Your email">
+                </div>
+
+              <button type="submit" class="btn btn-outline-info mb-2">Submit</button>
+            </form>
+        </div>
+        
+        <div class="container" id="about">
+            <div id="app-summary">
+                <h1>Why This App Is Awesome</h1>
+                <p class="lead">Summary, once again, of this app's awesomeness.</p>
+                
+                <div class="card-deck">
+                    <div class="card">
+                        <img class="card-img-top" src="images/businessman.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-user-tie"></i> Built for professionals</h5>
+                            <p class="card-text">While being simple enough for the average user, this app was designed to cater to power users and professionals to deliver the highest capability and performance.</p>
+                            <p class="card-text"><small><a href="">Learn More</a></small></p>
+                        </div>
+                    </div>
+                    
+                    <div class="w-100 d-lg-none mt-4"></div>
+                    
+                    <div class="card">
+                        <img class="card-img-top" src="images/fast-lights.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-bolt"></i> Powerful, fast and efficient</h5>
+                            <p class="card-text">Get things done with ease and quickness with this app which was built to perform and designed to last, with a very small learning curve and endless capabilities.</p>
+                            <p class="card-text"><small><a href="">Learn More</a></small></p>
+                        </div>
+                    </div>
+                    
+                    <div class="w-100 d-lg-none mt-4"></div>
+                    
+                    <div class="card">
+                        <img class="card-img-top" src="images/phone.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-mobile-alt"></i> Embraces the bleeding edge</h5>
+                            <p class="card-text">This app uses the latest technologies to work well on a variety of devices and platforms, constantly being updated with new features as quickly as the world moves.</p>
+                            <p class="card-text"><small><a href="">Learn More</a></small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <hr>
+            <div class="row" id="download">
+                <div class="col-md-4 text-center">
+                    <h2>Download the app!</h2>
+                    <p class="lead">Check it out and leave a review.</p>
+                </div>
+                <div class="col-md-8 row">
+                    <div class="col-xs-6 download-link-container">
+                        <p><a href="https://www.apple.com/ca/ios/app-store/"><img class="download-link" src="images/app-store-icon.png"></a></p>
+                    </div>
+                    <div class="col-xs-6 download-link-container">
+                        <p><a href="https://play.google.com/store"><img class="download-link" src="images/google-play-icon.png"></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+    
+</html>
