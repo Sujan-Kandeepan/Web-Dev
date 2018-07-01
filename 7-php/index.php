@@ -155,6 +155,10 @@
     } else {
         echo "<p>Send failed.</p>";
     }
+
+    // Importing PHP scripts
+    include("extra.php");
+    echo file_get_contents("http://example.com/");
 ?>
 
 <form>
