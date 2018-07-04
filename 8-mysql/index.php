@@ -34,5 +34,13 @@
 
     // Storing passwords securely
     $row["id"] = 75;
-    echo "Secure password hash: ".md5(md5($row["id"])."password");
+    echo "Secure password hash (md5, old): ".md5(md5($row["id"])."password");
+    echo "<br><br>";
+    $hash = password_hash("mypassword", PASSWORD_DEFAULT);
+    echo "Secure password hash (password_hash, PHP 5.5+): ".$hash;
+    if (password_verify('mypassword', $hash)) {
+        echo ' - Password is valid!';
+    } else {
+        echo ' - Invalid password.';
+    }
 ?>
