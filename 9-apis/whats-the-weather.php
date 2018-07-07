@@ -2,7 +2,7 @@
     $weather = "";
     $city = "";
     if (array_key_exists("city", $_GET) && $_GET["city"]) {
-        $json = file_get_contents("https://samples.openweathermap.org/data/2.5/weather?q=".urlencode($_GET["city"])."&appid=d64d576442c3bacb2957ea83d4e2f820");
+        $json = file_get_contents("https://samples.openweathermap.org/data/2.5/weather?q=".urlencode($_GET["city"])."&appid=b6907d289e10d714a6e88b30761fae22");
         $array = json_decode($json, true);
         
         if ($array["cod"] == 200) {
