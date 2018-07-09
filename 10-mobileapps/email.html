@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+        <link rel="stylesheet" href="appjs/app.min.css">
+        <style>
+			
+        </style>
+    </head>
+
+    <body>
+        <div class="app-page" data-page="home">
+            <div class="app-topbar blue">
+                <div class="app-title">Email Client Home</div>
+            </div>
+            <div class="app-content">
+                <p class="app-section">Select a recipient below to begin composing an email.</p>
+                
+                <div class="app-section" id="contact-list"></div>
+                
+                <div class="app-section">
+					<div class="app-button" id="new-user">Send to new recipient</div>
+				</div>
+            </div>
+        </div>
+        
+        <div class="app-page" data-page="send-email">
+			<div class="app-topbar blue">
+				<div class="app-title">Compose Email</div>
+				<div class="right app-button" data-back>Exit</div>
+			</div>
+
+			<div class="app-content">
+                <p class="app-section" id="status"></p>
+                
+				<div class="app-section">
+					From: <input class="app-input" id="sender-email" placeholder="Sender address">
+                    To: <input class="app-input" id="recipient-email" placeholder="Recipient address">
+				</div>
+
+				<form class="app-section">
+					<input class="app-input" id="subject" name="subject" placeholder="Subject">
+					<textarea class="app-input" id="message" name="message" placeholder="Message"></textarea>
+					<div class="app-button green app-submit" id="send-button">Send</div>
+				</form>
+			</div>
+		</div>
+
+        <script src="appjs/zepto.js"></script>
+        <script src="appjs/app.min.js"></script>
+        <script>
+            App.controller('home', function (page) {
+                if (typeof(Storage) != "undefined") {
+                    $(page).find("#new-user")
+                        .clickable()
+                        .on('click', function() {
+                            if (localStorage.getItem("recipient-email") != null) {
+                                localStorage.removeItem("recipient-email");
+                                App.load("send-email");
+                            }
+                        });
+                    
+                    if (localStorage.getItem("recipient-list") != null && JSON.parse(localStorage.getItem("recipient-list")) != "" && JSON.parse(localStorage.getItem("recipient-list")).length > 0) {
+                        var recipientList = JSON.parse(localStorage.getItem("recipient-list"));
+                        $.each(recipientList, function(index, value) {
+                            $(page).find("#contact-list").append('<div class="app-button redirect" data-target="send-email">' + value + '</div>');
+                        });
+                        
+                        $(page).find("#contact-list").show();
+                        
+                        $(page).find(".redirect")
+                            .clickable()
+                            .on('click', function() {
+                                localStorage.setItem("recipient-email", $(this).html());
+                                App.load("send-email");
+                            });
+                    } else {
+                        $(page).find("#contact-list").hide();
+                    }
+                } else {
+                    $(page).find("#contact-list").hide();
+                }
+            });
+            
+            App.controller('send-email', function (page) {
+                $(page).find("#status").hide();
+                
+                if (typeof(Storage) != "undefined") {
+                    if (localStorage.getItem("sender-email") != null) {
+                        $(page).find("#sender-email").val(localStorage.getItem("sender-email"));
+                    }
+                    
+                    if (localStorage.getItem("recipient-email") != null) {
+                        $(page).find("#recipient-email").val(localStorage.getItem("recipient-email"));
+                    }
+                }
+                
+                $(page).find('#send-button')
+                    .clickable()
+                    .on('click', function() {
+                        $(page).find("#status").html("Sending...");
+                        $(page).find("#status").show();
+                    
+                        $.ajax({
+                            type: 'GET',
+                            url: 'http://sujankandeepantesthostingpackage-com.stackstaging.com/mobileapps/sendemail.php?callback=response',
+                            data: { to: $("#recipient-email").val(), from: $("#sender-email").val(), subject: $("#subject").val(), message: $("#message").val() },
+                            dataType: 'jsonp',
+                            timeout: 300,
+                            context: $('body'),
+                            success: function(data){
+                                if (data.success == true) {
+                                    $(page).find("#status").html("Your email was sent successfully!");
+                                } else {
+                                    $(page).find("#status").html("Your email could not be sent - please try again later.");
+                                }
+                                $(page).find("#status").show();
+                            },
+                            error: function(xhr, type){
+                                $(page).find("#status").html("Your email could not be sent - please try again later.");
+                                $(page).find("#status").show();
+                            }
+                        });
+                    
+                        if (typeof(Storage) != "undefined") {
+                            localStorage.setItem("sender-email", $("#sender-email").val());
+                    
+                            var recipientList = new Array();
+                            if (localStorage.getItem("recipient-list") != null) {
+                                recipientList = JSON.parse(localStorage.getItem("recipient-list"));
+                            }
+
+                            if ($.inArray($("#recipient-email").val(), recipientList) == -1 && $("#recipient-email").val() != "") {
+                                recipientList.push($("#recipient-email").val());
+                                recipientList.sort();
+                                localStorage.setItem("recipient-list", JSON.stringify(recipientList));
+                                console.log(recipientList);
+                            }
+                        } else {
+                            alert("Data could not be saved!");
+                        }
+                    });
+            });
+            
+            try {
+                App.restore();
+            } catch (err) {
+                App.load('home');
+            }
+        </script>
+    </body>
+</html>
