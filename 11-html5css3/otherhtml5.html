@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            document.createElement("container");
+        </script>
+        
+        <title>Other HTML5 Features</title>
+        
+        <style type="text/css">
+            header, footer, article, section, nav, menu {
+                color: green;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <article>
+            I'm an article, just one of many new fancy names for a div!
+        </article>
+        
+        <container>
+            I'm a container, a new type of element made using JS!
+        </container>
+        
+        <figure>
+            <img id="maggie" src="images/maggie.png" alt="Maggie Simpson" data-description="baby">
+            <figcaption><p><mark>Maggie Simpson</mark> <small>(Wikipedia)</small></p></figcaption>
+        </figure>
+        
+        <input type="range" min="0" max="100" step="10">
+        
+        <div contenteditable="true">
+            <p>Anybody could edit this content! Try adding items to the list below:</p>
+            <ul>
+                <li>First item in the list</li>
+            </ul>
+        </div>
+        
+        <script type="text/javascript">
+            console.log(document.getElementById("maggie").getAttribute("data-description"));
+        </script>
+    </body>
+</html>
