@@ -1,0 +1,24 @@
+<head>
+    <title>Forms Special Features</title>
+</head>
+<body>
+    <form id="my-form">
+        <p>Placeholder: <input type="text" placeholder="Type something here"></p>
+        <p>Autofocus: <input type="text" autofocus></p>
+        <p>Autocomplete off: <input type="text" autocomplete="off"></p>
+        <p>Required: <input type="text" required></p>
+        <p>Email: <input type="email"></p>
+        <p>Pattern: <input type="text" pattern="[0-9]*" placeholder="Only numbers"></p>
+        <datalist id="names">
+            <option value="Sujan">Sujan</option>
+            <option value="Janan">Janan</option>
+            <option value="Sujatha">Sujatha</option>
+            <option value="Kandeepan">Kandeepan</option>
+        </datalist>
+        <p>Autocomplete list: <input type="text" list="names" placeholder="Choose family member"></p>
+        <p>Multiple files: <input type="file" multiple></p>
+        <p><input type="submit" formaction="" formmethod="post"></p>
+    </form>
+    
+    <p>Code outside form: <input type="text" form="my-form"></p>
+</body>
