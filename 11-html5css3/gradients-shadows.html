@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Gradients and Shadows</title>
+        
+        <style type="text/css">
+            #gradient {
+                width: 500px;
+                height: 200px;
+                background-color: blue;
+                background: linear-gradient(to bottom right, white, blue, black);
+            }
+            
+            #radial {
+                width: 500px;
+                height: 200px;
+                background-color: red;
+                background: radial-gradient(white, red);
+            }
+            
+            #challenge {
+                width: 500px;
+                height: 200px;
+                background: linear-gradient(to top right, yellow, green);
+            }
+            
+            #shadow {
+                text-shadow: 2px 2px 4px grey;
+            }
+            
+            #glow {
+                text-shadow: 0px 0px 10px yellow;
+            }
+            
+            #multi-shadow {
+                text-shadow: 2px 2px 4px red, -2px -2px 4px blue;
+            }
+            #box-shadow {
+                width: 300px;
+                height: 200px;
+                background-color: aqua;
+                box-shadow: 12px 12px 12px grey;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="gradient">This is a linear gradient</div>
+        
+        <div id="radial">This is a radial gradient</div>
+        
+        <div id="challenge">This is another gradient for practice</div>
+        
+        <h2 id="shadow">This text has a shadow</h2>
+        
+        <h2 id="glow">This text appears to be glowing</h2>
+        
+        <h2 id="multi-shadow">This text has multiple shadows</h2>
+        
+        <div id="box-shadow">This div has a box shadow</div>
+    </body>
+</html>
