@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>Pseudo-Classes</title>
+        
+        <style type="text/css">
+            a:hover {
+                text-decoration: underline;
+            }
+            
+            input:focus {
+                background-color: blue;
+            }
+            
+            input:disabled {
+                font-size: 25px;
+            }
+            
+            p:first-child {
+                color: aqua;
+            }
+            
+            p:last-child {
+                color: fuchsia;
+            }
+            
+            a:only-child {
+                font-size: 150%;
+            }
+            
+            p:first-of-type { /* last-of-type, only-of-type */
+                text-decoration: underline;
+            }
+            
+            tr:nth-child(2n-1) { /* nth-last-child, nth-of-type */
+                color: red;
+            }
+            
+            div:empty {
+                display: none;
+            }
+            
+            span:not(#excluded) {
+                font-size: 200%;
+            }
+            
+            p:first-letter { /* first-line */
+                color: blue;
+            }
+            
+            #google:after {
+                content: " ("attr(href)")";
+            }
+        </style>
+    </head>
+    <body>
+        <a>I am a link</a>
+        
+        <input placeholder="Blue when focused">
+        
+        <input value="Styling to disabled link" disabled>
+        
+        <div><p>Paragraph first inside a div</p><a></a></div>
+        
+        <div><span></span><a></a><p>Paragraph last inside a div</p></div>
+        
+        <div><a>Only link</a></div>
+        
+        <div><a>First link</a> <a>Second link</a></div>
+        
+        <div style="background-color: lightblue"><span>Span</span><p>Paragraph</p><a>Link</a></div>
+        
+        <table>
+            <tr>Table row</tr>
+            <tr>Table row</tr>
+            <tr>Table row</tr>
+            <tr>Table row</tr>
+            <tr>Table row</tr>
+        </table>
+        
+        <div></div>
+        
+        <div id="group">
+            <span>Span</span>
+            <span id="excluded">Span</span>
+            <span>Span</span>
+        </div>
+        
+        <a id="google" href="https://www.google.com">Click here</a>
+    </body>
+</html>
