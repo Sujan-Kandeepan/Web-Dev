@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Layout and Calculations</title>
+        
+        <style type="text/css">
+            #multi-column {
+                margin: 10px;
+                column-count: 3;
+                column-gap: 40px;
+                column-rule: 1px solid grey;
+            }
+            
+            h2 {
+                column-span: all;
+                text-align: center;
+            }
+            
+            header {
+                width: 100%;
+                height: 50px;
+                background-color: lightblue;
+            }
+            
+            #container {
+                width: calc(100% - 16px);
+                background-color: lightgrey;
+                position: absolute;
+                height: calc(100% - 50px);
+            }
+            
+            .flexbox-container {
+                display: flex;
+                width: 100%;
+                height: auto;
+                background-color: aqua;
+                flex-direction: row;
+                flex-wrap: wrap;
+                
+            }
+            
+            .flexbox-item {
+                background-color: bisque;
+                width: 100px;
+                height: 100px;
+                margin: 10px;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            
+            .flexbox-item:nth-child(2n) {
+                border: 5px solid grey;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flexbox-container">
+            <div class="flexbox-item">Item 1</div>
+            <div class="flexbox-item">Item 2</div>
+            <div class="flexbox-item">Item 3</div>
+            <div class="flexbox-item">Item 4</div>
+            <div class="flexbox-item">Item 5</div>
+            <div class="flexbox-item">Item 6</div>
+            <div class="flexbox-item">Item 7</div>
+            <div class="flexbox-item">Item 8</div>
+            <div class="flexbox-item">Item 9</div>
+            <div class="flexbox-item">Item 10</div>
+        </div>
+        
+        <div id="multi-column">
+            <h2>News for nerds</h2>
+            
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Felis imperdiet proin fermentum leo vel orci porta. Purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Consequat nisl vel pretium lectus quam id leo in vitae. Sociis natoque penatibus et magnis dis parturient montes. Enim nec dui nunc mattis enim ut tellus elementum sagittis. Libero justo laoreet sit amet cursus sit amet dictum. Morbi tristique senectus et netus et malesuada fames ac. Elementum pulvinar etiam non quam lacus suspendisse faucibus interdum posuere. Mauris vitae ultricies leo integer malesuada nunc vel risus commodo. Morbi tristique senectus et netus et malesuada fames. Mus mauris vitae ultricies leo integer malesuada nunc vel risus. Tempor id eu nisl nunc. Lacus laoreet non curabitur gravida arcu ac tortor. Amet purus gravida quis blandit turpis cursus in. Et netus et malesuada fames ac turpis egestas sed tempus. Eros in cursus turpis massa tincidunt dui ut. Pretium quam vulputate dignissim suspendisse in est ante in nibh. Posuere morbi leo urna molestie at elementum. Vitae turpis massa sed elementum tempus egestas sed.<br><br>
+
+            Pharetra sit amet aliquam id. Enim neque volutpat ac tincidunt vitae semper quis. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Senectus et netus et malesuada fames. Id leo in vitae turpis massa sed elementum tempus egestas. Consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat. Porttitor massa id neque aliquam vestibulum. Malesuada bibendum arcu vitae elementum curabitur vitae. Tincidunt id aliquet risus feugiat. Viverra maecenas accumsan lacus vel facilisis volutpat. Nunc sed augue lacus viverra vitae congue. Libero justo laoreet sit amet cursus. Molestie at elementum eu facilisis sed odio.<br><br>
+
+            Vitae semper quis lectus nulla at volutpat diam ut. Commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec. Libero justo laoreet sit amet cursus sit amet dictum. Sodales ut etiam sit amet nisl purus in. Nunc faucibus a pellentesque sit. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget. Sem viverra aliquet eget sit amet tellus cras. Sed vulputate mi sit amet mauris. Donec et odio pellentesque diam. Felis eget nunc lobortis mattis aliquam faucibus purus in. Elit scelerisque mauris pellentesque pulvinar. Et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Orci dapibus ultrices in iaculis nunc sed augue lacus viverra.<br><br>
+
+            Morbi enim nunc faucibus a pellentesque sit. Nisl vel pretium lectus quam. Suspendisse potenti nullam ac tortor vitae. Feugiat in ante metus dictum at tempor. Amet massa vitae tortor condimentum lacinia quis. Dignissim diam quis enim lobortis scelerisque. Quam nulla porttitor massa id. Elit eget gravida cum sociis natoque penatibus et. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam. Mauris nunc congue nisi vitae suscipit. Integer quis auctor elit sed vulputate mi sit amet. Sit amet nulla facilisi morbi. Blandit cursus risus at ultrices mi tempus imperdiet nulla malesuada. Tincidunt praesent semper feugiat nibh sed. Amet nisl purus in mollis nunc sed id semper.<br><br>
+
+            Non curabitur gravida arcu ac tortor dignissim convallis. Varius sit amet mattis vulputate. Ornare aenean euismod elementum nisi quis eleifend. Ultrices tincidunt arcu non sodales neque sodales ut. Faucibus purus in massa tempor nec feugiat. Nisi est sit amet facilisis. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Ultrices vitae auctor eu augue ut lectus. Habitant morbi tristique senectus et netus et malesuada fames. Vel facilisis volutpat est velit egestas. Diam volutpat commodo sed egestas egestas fringilla phasellus. Iaculis eu non diam phasellus vestibulum lorem sed risus.<br><br>
+        </div>
+        
+        <header>50px</header>
+            
+        <div id="container">100% - 50px</div>
+    </body>
+</html>
