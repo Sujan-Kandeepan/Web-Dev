@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Advanced Selectors</title>
+        
+        <style type="text/css">
+            div {
+                background-color: lightgrey;
+            }
+            
+            h1 {
+                color: red;
+            }
+            
+            .green {
+                color: green;
+            }
+            
+            #blue {
+                color: blue;
+            }
+            
+            div p {
+                font-weight: bold;
+            }
+            
+            h1 ~ p {
+                text-decoration: underline;
+            }
+            
+            h1 + p {
+                font-size: 200%;
+            }
+            
+            a[target] {
+                font-size: 150%;
+            }
+            
+            a[href*="google"] {
+                text-decoration: none;
+            }
+        </style>
+        
+        <!--
+            ^= - begins with
+            $= - ends with
+            ~= - has value between two spaces
+            |= - has the value separated by hyphens
+        -->
+    </head>
+    <body>
+        <div>
+            <h1>I am a header!</h1>
+            
+            <p class="green">I am a paragraph!</p>
+
+            <p>I am a second paragraph!</p>
+
+            <a id="blue" href="" target="_blank">I am a link!</a>
+            
+            <a id="blue" href="https://www.google.com">I am a link!</a>
+        </div>
+        
+        <p>I am outside the div!</p>
+    </body>
+</html>
