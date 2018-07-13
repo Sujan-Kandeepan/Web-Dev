@@ -23,3 +23,52 @@ dict = {"father": "Kandeepan",
         "younger-son": "Janan"}
 print(dict.keys())
 print(dict.values())
+
+for i in range(6, 11):
+    print(i)
+
+for food in ["pizza", "chocolate", "ice cream"]:
+    print("I like eating " + food)
+
+x = 6
+while x <= 10:
+    print(x)
+    x += 1
+
+for key, value in {"Sujan": 19, "Janan": 14, "Sujatha": 51, "Kandeepan": 54}.items():
+    print(key + " is " + str(value))
+
+if "Sujan" == "Janan" or 3 < 4:
+    print("Fascinating...")
+
+numPrimes = 0
+next = 2
+while numPrimes < 50:
+    prime = True
+    for factor in range(2, next):
+        if next % factor == 0:
+            prime = False
+    if prime:
+        print(next)
+        numPrimes += 1
+    next += 1
+
+def sayHello(name):
+    return "Hello " + name + "!"
+print(sayHello("Sujan"))
+
+def greatestCommonFactor(num1, num2):
+    gcf = 1
+    for i in range(2, min(num1, num2) + 1):
+        if num1 % i == 0 and num2 % i == 0 and i > gcf:
+            gcf = i
+    return gcf
+print(greatestCommonFactor(18, 24))
+
+a = 5
+b = 6
+def add():
+    a = 10
+    return a + b;
+print(add())
+print("a = " + str(a))
